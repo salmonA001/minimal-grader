@@ -43,7 +43,7 @@ export const useAppStore = create<AppState>()(
       logout: () => set({ user: null }),
     }),
     {
-      name: 'minimal-grader',
+      name: 'grader-samsen',
       partialize: (s) => ({
         user: s.user,
         isDark: s.isDark,

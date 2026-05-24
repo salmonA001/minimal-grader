@@ -1,6 +1,6 @@
 # Grader Samsen
 
-**Live site:** [https://salmonA001.github.io/minimal-grader/](https://salmonA001.github.io/minimal-grader/)
+**Live site:** [https://salmonA001.github.io/grader-samsen/](https://salmonA001.github.io/grader-samsen/)
 
 Online judge for Samsen School — classrooms, contests, and coding practice. UI inspired by Linear, Vercel, and Notion.
 
@@ -23,7 +23,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) locally, or use the [live demo](https://salmonA001.github.io/minimal-grader/).
+Open [http://localhost:5173](http://localhost:5173) locally, or use the [live demo](https://salmonA001.github.io/grader-samsen/).
 
 - **Landing:** `/`
 - **Student dashboard:** `/app` (or sign in at `/login`)
