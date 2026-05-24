@@ -9,8 +9,10 @@ import {
   Trophy,
   Zap,
 } from 'lucide-react'
+import { BrandMark } from '@/components/BrandMark'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { SITE_NAME } from '@/lib/brand'
 
 const features = [
   { icon: BookOpen, title: 'Classroom management', desc: 'Join with a code, assignments, announcements.' },
@@ -32,8 +34,8 @@ export default function Landing() {
     <div className="min-h-screen bg-white text-gray-900">
       <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/90 backdrop-blur">
         <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
-          <Link to="/" className="font-semibold tracking-tight">
-            Grader<span className="text-gray-400">.</span>
+          <Link to="/">
+            <BrandMark />
           </Link>
           <nav className="hidden items-center gap-8 text-sm text-gray-600 md:flex">
             <a href="#features" className="hover:text-gray-900">Features</a>
@@ -58,7 +60,7 @@ export default function Landing() {
           transition={{ duration: 0.4 }}
           className="max-w-2xl"
         >
-          <p className="mb-4 text-sm font-medium text-gray-500">Modern Online Judge Platform</p>
+          <p className="mb-4 text-sm font-medium text-gray-500">Samsen online judge platform</p>
           <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
             Built for schools, contests, and coding education.
           </h1>
@@ -176,7 +178,7 @@ export default function Landing() {
 
       <footer className="border-t border-gray-200 py-12">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 sm:flex-row">
-          <span className="text-sm text-gray-500">© 2026 Grader. Minimal online judge.</span>
+          <span className="text-sm text-gray-500">© 2026 {SITE_NAME}</span>
           <div className="flex gap-6 text-sm text-gray-500">
             <Link to="/login" className="hover:text-gray-900">Sign in</Link>
             <Link to="/app" className="hover:text-gray-900">Dashboard</Link>

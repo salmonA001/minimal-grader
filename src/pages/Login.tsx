@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
+import { BrandMark } from '@/components/BrandMark'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -26,8 +27,8 @@ export default function Login() {
     <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4 dark:bg-gray-950">
       <Card className="w-full max-w-sm">
         <CardHeader>
-          <Link to="/" className="text-sm font-semibold">
-            Grader<span className="text-gray-400">.</span>
+          <Link to="/" className="text-sm">
+            <BrandMark />
           </Link>
           <CardTitle className="pt-4">Sign in</CardTitle>
           <CardDescription>Enter your school email to continue.</CardDescription>

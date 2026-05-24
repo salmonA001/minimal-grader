@@ -1,8 +1,8 @@
-# Grader — Minimal Online Judge
+# Grader Samsen
 
 **Live site:** [https://salmonA001.github.io/minimal-grader/](https://salmonA001.github.io/minimal-grader/)
 
-A minimal online judge / grader platform inspired by programming.in.th, Google Classroom, and grader.gchan.moe. UI inspired by Linear, Vercel, and Notion.
+Online judge for Samsen School — classrooms, contests, and coding practice. UI inspired by Linear, Vercel, and Notion.
 
 ## Stack
 

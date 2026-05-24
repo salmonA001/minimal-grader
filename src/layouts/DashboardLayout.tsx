@@ -17,6 +17,8 @@ import {
   FileCode,
   ClipboardList,
 } from 'lucide-react'
+import { BrandMark } from '@/components/BrandMark'
+import { SITE_NAME } from '@/lib/brand'
 import { cn } from '@/lib/utils'
 import { useAppStore } from '@/store/useAppStore'
 import { Button } from '@/components/ui/button'
@@ -51,8 +53,8 @@ export default function DashboardLayout({ admin = false }: { admin?: boolean }) 
     <div className="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100">
       <aside className="fixed inset-y-0 left-0 z-40 hidden w-56 border-r border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-950 lg:flex lg:flex-col">
         <div className="flex h-14 items-center border-b border-gray-200 px-5 dark:border-gray-800">
-          <Link to="/" className="font-semibold tracking-tight">
-            Grader<span className="text-gray-400">.</span>
+          <Link to="/">
+            <BrandMark />
           </Link>
         </div>
         <nav className="flex-1 space-y-0.5 p-3">
@@ -106,7 +108,7 @@ export default function DashboardLayout({ admin = false }: { admin?: boolean }) 
 
       <div className="lg:pl-56">
         <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-gray-200 bg-white/90 px-4 backdrop-blur dark:border-gray-800 dark:bg-gray-950/90 sm:px-8">
-          <p className="text-sm text-gray-500 lg:hidden">Grader.</p>
+          <p className="text-sm text-gray-500 lg:hidden">{SITE_NAME}</p>
           <div className="ml-auto flex items-center gap-3">
             {user?.tier && (
               <span className="hidden text-xs text-gray-500 sm:inline">
