@@ -40,7 +40,6 @@ export default function Landing() {
           </Link>
           <nav className="hidden items-center gap-8 text-sm text-gray-600 md:flex">
             <a href="#features" className="hover:text-gray-900">Features</a>
-            <a href="#pricing" className="hover:text-gray-900">Pricing</a>
             <a href="#faq" className="hover:text-gray-900">FAQ</a>
           </nav>
           <div className="flex items-center gap-3">
@@ -128,37 +127,6 @@ export default function Landing() {
                 </div>
               </BrowserFrame>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="pricing" className="border-t border-gray-200 py-24">
-        <div className="mx-auto max-w-6xl px-6 text-center">
-          <h2 className="text-2xl font-semibold">Simple pricing</h2>
-          <p className="mt-2 text-gray-600">Free for classrooms. Pro for contests at scale.</p>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 max-w-2xl mx-auto">
-            <Card>
-              <CardHeader>
-                <CardTitle>Free</CardTitle>
-                <CardDescription>For teachers and students</CardDescription>
-              </CardHeader>
-              <CardContent className="text-left text-sm text-gray-600 space-y-2">
-                <p>Unlimited classrooms</p>
-                <p>Public problems</p>
-                <p>Basic analytics</p>
-              </CardContent>
-            </Card>
-            <Card className="border-gray-900">
-              <CardHeader>
-                <CardTitle>Pro</CardTitle>
-                <CardDescription>Contests & institutions</CardDescription>
-              </CardHeader>
-              <CardContent className="text-left text-sm text-gray-600 space-y-2">
-                <p>Plagiarism detection</p>
-                <p>Anti-cheat logs</p>
-                <p>Priority judging queue</p>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
