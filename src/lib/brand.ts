@@ -1,4 +1,4 @@
 export const SITE_NAME = 'Grader Samsen'
 
-/** Shown in the UI and matches the public GitHub Pages path */
-export const SITE_ADDRESS = 'salmona001.github.io/grader-samsen'
+/** Short label for browser mock previews only */
+export const SITE_ADDRESS = 'grader-samsen'

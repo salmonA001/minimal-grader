@@ -11,7 +11,6 @@ import {
 } from 'lucide-react'
 import { BrandMark } from '@/components/BrandMark'
 import { BrowserFrame } from '@/components/BrowserFrame'
-import { SiteAddress } from '@/components/SiteAddress'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { SITE_NAME } from '@/lib/brand'
@@ -36,12 +35,9 @@ export default function Landing() {
     <div className="min-h-screen bg-white text-gray-900">
       <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/90 backdrop-blur">
         <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
-          <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:gap-3">
-            <Link to="/">
-              <BrandMark />
-            </Link>
-            <SiteAddress className="hidden sm:inline" />
-          </div>
+          <Link to="/">
+            <BrandMark />
+          </Link>
           <nav className="hidden items-center gap-8 text-sm text-gray-600 md:flex">
             <a href="#features" className="hover:text-gray-900">Features</a>
             <a href="#pricing" className="hover:text-gray-900">Pricing</a>
@@ -70,8 +66,7 @@ export default function Landing() {
             Built for schools, contests, and coding education.
           </h1>
           <p className="mt-6 text-lg text-gray-600">
-            Fast, minimal judging for Samsen classrooms and contests — sign in at{' '}
-            <SiteAddress className="text-gray-900" />.
+            Fast, minimal judging for Samsen classrooms and contests.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Button size="lg" asChild>
@@ -184,10 +179,7 @@ export default function Landing() {
 
       <footer className="border-t border-gray-200 py-12">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 sm:flex-row">
-          <div className="flex flex-col items-center gap-1 sm:items-start">
-            <span className="text-sm text-gray-500">© 2026 {SITE_NAME}</span>
-            <SiteAddress />
-          </div>
+          <span className="text-sm text-gray-500">© 2026 {SITE_NAME}</span>
           <div className="flex gap-6 text-sm text-gray-500">
             <Link to="/login" className="hover:text-gray-900">Sign in</Link>
             <Link to="/app" className="hover:text-gray-900">Dashboard</Link>
