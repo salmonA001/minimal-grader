@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-family-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-family-sans: 'JetBrains Mono', ui-monospace, monospace;
   --font-family-mono: 'JetBrains Mono', ui-monospace, monospace;
   --color-background: #ffffff;
   --color-foreground: #111111;
@@ -16,16 +16,36 @@
 
 @layer base {
   html {
+    font-family: var(--font-family-sans);
     @apply antialiased;
   }
-  body {
-    @apply bg-white text-gray-900 font-sans;
+  body,
+  #root {
+    font-family: inherit;
+    @apply bg-white text-gray-900 tracking-tight;
   }
   .dark body {
     @apply bg-gray-950 text-gray-100;
   }
+  button,
+  input,
+  select,
+  textarea,
+  optgroup {
+    font-family: inherit;
+  }
+  code,
+  pre,
+  kbd,
+  samp {
+    font-family: var(--font-family-mono);
+  }
   .font-mono {
     font-family: var(--font-family-mono);
+  }
+  [data-sonner-toaster],
+  [data-sonner-toast] {
+    font-family: var(--font-family-sans) !important;
   }
 }
 

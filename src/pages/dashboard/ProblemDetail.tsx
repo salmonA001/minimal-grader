@@ -93,7 +93,7 @@ export default function ProblemDetail() {
                 const tpl = LANGUAGES.find((l) => l.id === lang)?.template
                 if (tpl && !draftCode[problem.id]) setCode(tpl)
               }}
-              className="h-9 rounded-md border border-gray-200 bg-white px-3 text-sm dark:border-gray-800 dark:bg-gray-950"
+              className="h-9 rounded-md border border-gray-200 bg-white px-3 font-sans text-sm dark:border-gray-800 dark:bg-gray-950"
             >
               {LANGUAGES.map((l) => (
                 <option key={l.id} value={l.id}>{l.label}</option>

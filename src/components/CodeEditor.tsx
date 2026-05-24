@@ -1,4 +1,5 @@
 import Editor from '@monaco-editor/react'
+import { jetbrainsMono } from '@/lib/utils'
 import { useAppStore } from '@/store/useAppStore'
 
 interface CodeEditorProps {
@@ -35,7 +36,7 @@ export default function CodeEditor({
           setDraftCode(problemId, code)
         }}
         options={{
-          fontFamily: "'JetBrains Mono', monospace",
+          fontFamily: jetbrainsMono,
           fontSize: 14,
           minimap: { enabled: false },
           scrollBeyondLastLine: false,

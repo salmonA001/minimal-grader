@@ -1,6 +1,7 @@
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis, Tooltip } from 'recharts'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { mockSubmissions, mockClassrooms, mockProblems } from '@/lib/mock-data'
+import { chartTick, chartTooltipStyle } from '@/lib/utils'
 
 const chartData = [
   { day: 'Mon', subs: 42 },
@@ -42,9 +43,9 @@ export default function AdminDashboard() {
         <CardContent className="h-64">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={chartData}>
-              <XAxis dataKey="day" tick={{ fontSize: 12 }} stroke="#94a3b8" />
-              <YAxis tick={{ fontSize: 12 }} stroke="#94a3b8" />
-              <Tooltip />
+              <XAxis dataKey="day" tick={chartTick} stroke="#94a3b8" />
+              <YAxis tick={chartTick} stroke="#94a3b8" />
+              <Tooltip contentStyle={chartTooltipStyle} />
               <Bar dataKey="subs" fill="#111827" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>

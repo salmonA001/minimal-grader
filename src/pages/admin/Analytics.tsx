@@ -1,5 +1,6 @@
 import { Line, LineChart, ResponsiveContainer, XAxis, YAxis, Tooltip } from 'recharts'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { chartTick, chartTooltipStyle } from '@/lib/utils'
 
 const acRate = [
   { week: 'W1', rate: 62 },
@@ -23,9 +24,9 @@ export default function Analytics() {
         <CardContent className="h-64">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={acRate}>
-              <XAxis dataKey="week" tick={{ fontSize: 12 }} stroke="#94a3b8" />
-              <YAxis tick={{ fontSize: 12 }} stroke="#94a3b8" />
-              <Tooltip />
+              <XAxis dataKey="week" tick={chartTick} stroke="#94a3b8" />
+              <YAxis tick={chartTick} stroke="#94a3b8" />
+              <Tooltip contentStyle={chartTooltipStyle} />
               <Line type="monotone" dataKey="rate" stroke="#111827" strokeWidth={2} dot={false} />
             </LineChart>
           </ResponsiveContainer>
