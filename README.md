@@ -1,73 +1,60 @@
-# React + TypeScript + Vite
+# Grader — Minimal Online Judge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal online judge / grader platform inspired by programming.in.th, Google Classroom, and grader.gchan.moe. UI inspired by Linear, Vercel, and Notion.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 19** + **Vite**
+- **Tailwind CSS v4**
+- **Framer Motion** — page transitions
+- **Zustand** — auth, theme, code drafts (persisted)
+- **Monaco Editor** — code submission
+- **shadcn-style UI** — Button, Card, Badge, Input
+- **React Hook Form** + **Sonner**
+- **Recharts** — admin analytics
+- **Mock judge** — replace with Judge0 or Docker sandbox
 
-## React Compiler
+## Quick start
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open [http://localhost:5173](http://localhost:5173).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Landing:** `/`
+- **Student dashboard:** `/app` (or sign in at `/login`)
+- **Teacher admin:** `/login` → “Demo as teacher” → `/admin`
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Project structure
+
 ```
+src/
+├── components/     # UI, CodeEditor, VerdictBadge
+├── layouts/        # DashboardLayout (sidebar)
+├── pages/          # Landing, auth, dashboard/*, admin/*
+├── hooks/          # useContestTimer
+├── lib/            # utils, mock-data
+├── services/       # judge.ts (mock → Judge0/Docker)
+├── store/          # useAppStore
+├── types/          # User, Problem, Submission, Verdict, …
+└── utils/          # verdict helpers
+```
+
+## Features (UI + mock data)
+
+**Students:** classes, problems, Monaco submit, verdict/testcases, submissions, leaderboard, contest timer, profile/XP, dark mode, AI hints (mock).
+
+**Teachers:** problem/testcase managers, user import/export, contest creator, analytics, anti-cheat placeholders.
+
+## Backend (next steps)
+
+1. **Auth:** Firebase or Supabase (`Users` table: id, name, email, role).
+2. **Judge:** `services/judge.ts` → Judge0 API or Express + Redis queue + Docker workers.
+3. **Realtime:** WebSocket for leaderboard/contest updates.
+
+## Design tokens
+
+- Background `#ffffff`, foreground `#111111`, border `#e5e7eb`
+- Fonts: **Inter** (UI), **JetBrains Mono** (code)
