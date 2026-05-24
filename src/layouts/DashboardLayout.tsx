@@ -18,6 +18,7 @@ import {
   ClipboardList,
 } from 'lucide-react'
 import { BrandMark } from '@/components/BrandMark'
+import { SiteAddress } from '@/components/SiteAddress'
 import { SITE_NAME } from '@/lib/brand'
 import { cn } from '@/lib/utils'
 import { useAppStore } from '@/store/useAppStore'
@@ -52,10 +53,11 @@ export default function DashboardLayout({ admin = false }: { admin?: boolean }) 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100">
       <aside className="fixed inset-y-0 left-0 z-40 hidden w-56 border-r border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-950 lg:flex lg:flex-col">
-        <div className="flex h-14 items-center border-b border-gray-200 px-5 dark:border-gray-800">
+        <div className="flex h-14 flex-col justify-center border-b border-gray-200 px-5 dark:border-gray-800">
           <Link to="/">
             <BrandMark />
           </Link>
+          <SiteAddress className="mt-0.5" />
         </div>
         <nav className="flex-1 space-y-0.5 p-3">
           {navItems.map((item) => {
@@ -108,7 +110,10 @@ export default function DashboardLayout({ admin = false }: { admin?: boolean }) 
 
       <div className="lg:pl-56">
         <header className="sticky top-0 z-30 flex h-14 items-center justify-between border-b border-gray-200 bg-white/90 px-4 backdrop-blur dark:border-gray-800 dark:bg-gray-950/90 sm:px-8">
-          <p className="text-sm text-gray-500 lg:hidden">{SITE_NAME}</p>
+          <div className="lg:hidden">
+            <p className="text-sm font-medium text-gray-900 dark:text-gray-100">{SITE_NAME}</p>
+            <SiteAddress />
+          </div>
           <div className="ml-auto flex items-center gap-3">
             {user?.tier && (
               <span className="hidden text-xs text-gray-500 sm:inline">

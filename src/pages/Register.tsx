@@ -2,6 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import { BrandMark } from '@/components/BrandMark'
+import { SiteAddress } from '@/components/SiteAddress'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -32,6 +33,7 @@ export default function Register() {
           <Link to="/" className="text-sm">
             <BrandMark />
           </Link>
+          <SiteAddress className="mt-1 block" />
           <CardTitle className="pt-4">Create account</CardTitle>
           <CardDescription>Join your class with an optional class code.</CardDescription>
         </CardHeader>
