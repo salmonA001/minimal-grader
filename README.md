@@ -1,5 +1,7 @@
 # Grader — Minimal Online Judge
 
+**Live site:** [https://salmonA001.github.io/minimal-grader/](https://salmonA001.github.io/minimal-grader/)
+
 A minimal online judge / grader platform inspired by programming.in.th, Google Classroom, and grader.gchan.moe. UI inspired by Linear, Vercel, and Notion.
 
 ## Stack
@@ -21,7 +23,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173).
+Open [http://localhost:5173](http://localhost:5173) locally, or use the [live demo](https://salmonA001.github.io/minimal-grader/).
 
 - **Landing:** `/`
 - **Student dashboard:** `/app` (or sign in at `/login`)
@@ -57,4 +59,4 @@ src/
 ## Design tokens
 
 - Background `#ffffff`, foreground `#111111`, border `#e5e7eb`
-- Fonts: **Inter** (UI), **JetBrains Mono** (code)
+- Font: **JetBrains Mono** (site-wide)

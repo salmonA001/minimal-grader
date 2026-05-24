@@ -19,9 +19,11 @@ import UserManager from '@/pages/admin/UserManager'
 import ContestCreator from '@/pages/admin/ContestCreator'
 import Analytics from '@/pages/admin/Analytics'
 
+const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, '')
+
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={routerBasename || undefined}>
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
