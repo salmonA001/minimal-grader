@@ -1,59 +1,27 @@
-import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom'
-import DashboardLayout from '@/layouts/DashboardLayout'
-import Landing from '@/pages/Landing'
-import Login from '@/pages/Login'
-import Register from '@/pages/Register'
-import DashboardHome from '@/pages/dashboard/Home'
-import Classes from '@/pages/dashboard/Classes'
-import Problems from '@/pages/dashboard/Problems'
-import ProblemDetail from '@/pages/dashboard/ProblemDetail'
-import Submissions from '@/pages/dashboard/Submissions'
-import Leaderboard from '@/pages/dashboard/Leaderboard'
-import Contest from '@/pages/dashboard/Contest'
-import Profile from '@/pages/dashboard/Profile'
-import Settings from '@/pages/dashboard/Settings'
-import AdminDashboard from '@/pages/admin/AdminDashboard'
-import ProblemManager from '@/pages/admin/ProblemManager'
-import TestcaseManager from '@/pages/admin/TestcaseManager'
-import UserManager from '@/pages/admin/UserManager'
-import ContestCreator from '@/pages/admin/ContestCreator'
-import Analytics from '@/pages/admin/Analytics'
-
-const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, '')
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import Problemset from './pages/Problemset';
+import Submissions from './pages/Submissions';
+import Classes from './pages/Classes';
+import Login from './pages/Login';
+import ProblemDetail from './pages/ProblemDetail';
 
 function App() {
   return (
-    <BrowserRouter basename={routerBasename || undefined}>
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-
-        <Route path="/app" element={<DashboardLayout />}>
-          <Route index element={<DashboardHome />} />
-          <Route path="classes" element={<Classes />} />
-          <Route path="problems" element={<Problems />} />
-          <Route path="problems/:id" element={<ProblemDetail />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="problemset" element={<Problemset />} />
+          <Route path="problem/:id" element={<ProblemDetail />} />
           <Route path="submissions" element={<Submissions />} />
-          <Route path="leaderboard" element={<Leaderboard />} />
-          <Route path="contest" element={<Contest />} />
-          <Route path="profile" element={<Profile />} />
-          <Route path="settings" element={<Settings />} />
+          <Route path="classes" element={<Classes />} />
+          <Route path="login" element={<Login />} />
         </Route>
-
-        <Route path="/admin" element={<DashboardLayout admin />}>
-          <Route index element={<AdminDashboard />} />
-          <Route path="problems" element={<ProblemManager />} />
-          <Route path="testcases" element={<TestcaseManager />} />
-          <Route path="users" element={<UserManager />} />
-          <Route path="contests" element={<ContestCreator />} />
-          <Route path="analytics" element={<Analytics />} />
-        </Route>
-
-        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;

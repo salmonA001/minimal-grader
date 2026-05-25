@@ -12,7 +12,7 @@ import {
 import { BrandMark } from '@/components/BrandMark'
 import { BrowserFrame } from '@/components/BrowserFrame'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { SITE_NAME } from '@/lib/brand'
 
 const features = [
