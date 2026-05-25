@@ -7,9 +7,11 @@ import Classes from './pages/Classes';
 import Login from './pages/Login';
 import ProblemDetail from './pages/ProblemDetail';
 
+const basename = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename || undefined}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
